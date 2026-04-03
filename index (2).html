@@ -1,0 +1,1948 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RebadgeOnboard | GLITCH THE SYSTEM | SANKALP – DELVE 2026</title>
+    <meta
+      name="description"
+      content="RebadgeOnboard – Full lifecycle onboarding for employee rebadging. Built for GLITCH THE SYSTEM (SANKALP | DELVE 2026)."
+    />
+
+    <!-- Tailwind via CDN (allowed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root {
+        --bg0: #1a2234;
+        --bg1: #1e293b;
+        --accent: #6366f1;
+        --accent-soft: #818cf8;
+        --accent-teal: #2dd4bf;
+        --neon-pink: #a78bfa;
+        --neon-cyan: #38bdf8;
+        --neon-purple: #818cf8;
+        --glass: rgba(30, 41, 59, 0.55);
+        --text: #e2e8f0;
+        --text-muted: #94a3b8;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        color-scheme: dark;
+      }
+
+      body {
+        background:
+          radial-gradient(900px 520px at 12% -5%, rgba(99, 102, 241, 0.12), transparent 55%),
+          radial-gradient(700px 480px at 92% 25%, rgba(45, 212, 191, 0.08), transparent 52%),
+          radial-gradient(600px 400px at 50% 100%, rgba(56, 189, 248, 0.06), transparent 50%),
+          linear-gradient(168deg, #141b2a 0%, var(--bg1) 42%, #1a1f35 100%);
+        color: var(--text);
+      }
+
+      /* Subtle professional grid */
+      .bg-matrix {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.22;
+        mix-blend-mode: soft-light;
+        background-image:
+          linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+        background-size: 48px 48px, 48px 48px;
+        animation: gridDrift 22s linear infinite;
+      }
+      @keyframes gridDrift {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-64px, -64px, 0);
+        }
+      }
+
+      /* Glitch title effect (medium-dark, soft contrast) */
+      .glitch {
+        position: relative;
+        display: inline-block;
+        color: #f1f5f9;
+        text-shadow: 0 1px 0 rgba(15, 23, 42, 0.5);
+      }
+      .glitch::before,
+      .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        inset: 0;
+        opacity: 0.55;
+        pointer-events: none;
+      }
+      .glitch::before {
+        color: #818cf8;
+        transform: translate3d(-1px, 0, 0);
+        clip-path: inset(0 0 55% 0);
+        animation: glitchA 2.6s infinite linear alternate-reverse;
+      }
+      .glitch::after {
+        color: #5eead4;
+        transform: translate3d(1px, 0, 0);
+        clip-path: inset(55% 0 0 0);
+        animation: glitchB 2.3s infinite linear alternate-reverse;
+      }
+      @keyframes glitchA {
+        0% {
+          clip-path: inset(0 0 56% 0);
+          transform: translate3d(-1px, 0, 0);
+          filter: blur(0px);
+        }
+        17% {
+          clip-path: inset(0 0 45% 0);
+          transform: translate3d(-2px, -1px, 0);
+        }
+        48% {
+          clip-path: inset(0 0 68% 0);
+          transform: translate3d(-1px, 1px, 0);
+          filter: blur(0.2px);
+        }
+        100% {
+          clip-path: inset(0 0 52% 0);
+          transform: translate3d(-2px, 0, 0);
+          filter: blur(0px);
+        }
+      }
+      @keyframes glitchB {
+        0% {
+          clip-path: inset(58% 0 0 0);
+          transform: translate3d(1px, 0, 0);
+          filter: blur(0px);
+        }
+        23% {
+          clip-path: inset(45% 0 0 0);
+          transform: translate3d(2px, 1px, 0);
+        }
+        61% {
+          clip-path: inset(70% 0 0 0);
+          transform: translate3d(1px, -1px, 0);
+          filter: blur(0.2px);
+        }
+        100% {
+          clip-path: inset(56% 0 0 0);
+          transform: translate3d(2px, 0, 0);
+          filter: blur(0px);
+        }
+      }
+
+      /* Glass + professional accents (medium-dark) */
+      .glass {
+        background: linear-gradient(180deg, rgba(30, 41, 59, 0.72), rgba(15, 23, 42, 0.78));
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(148, 163, 184, 0.14);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
+      .neon-border {
+        border: 1px solid rgba(129, 140, 248, 0.22);
+        box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.08), 0 4px 24px rgba(99, 102, 241, 0.12);
+      }
+      .neon-btn {
+        border: 1px solid rgba(129, 140, 248, 0.45);
+        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 55%, #4338ca 100%);
+        color: #f8fafc;
+        box-shadow: 0 2px 10px rgba(99, 102, 241, 0.28), 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+      .neon-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 18px rgba(99, 102, 241, 0.35), 0 2px 6px rgba(0, 0, 0, 0.18);
+      }
+      .tag {
+        border: 1px solid rgba(148, 163, 184, 0.16);
+        background: rgba(30, 41, 59, 0.45);
+      }
+
+      /* Marquee */
+      .marquee {
+        overflow: hidden;
+        position: relative;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      }
+      .marquee > div {
+        display: flex;
+        gap: 2.5rem;
+        width: max-content;
+        animation: marquee 18s linear infinite;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Chat scrollbars */
+      .thin-scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+      .thin-scrollbar::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, rgba(99, 102, 241, 0.45), rgba(45, 212, 191, 0.35));
+        border-radius: 999px;
+      }
+      .thin-scrollbar::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.6);
+      }
+
+      /* Simple modal */
+      .modal-backdrop[aria-hidden="true"] {
+        display: none;
+      }
+      .pulse-glow {
+        animation: pulseGlow 1.6s ease-in-out infinite;
+      }
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2), 0 4px 14px rgba(99, 102, 241, 0.12);
+        }
+        50% {
+          box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.18), 0 6px 20px rgba(45, 212, 191, 0.1);
+        }
+      }
+
+      /* Floating viewer bot */
+      .fab {
+        box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25), 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+      .fab:hover {
+        box-shadow: 0 6px 22px rgba(99, 102, 241, 0.32), 0 2px 8px rgba(0, 0, 0, 0.22);
+        transform: translateY(-1px);
+      }
+
+      /* RebadgeBot (chat) polish */
+      .chat-shell {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 16px 48px rgba(0, 0, 0, 0.28);
+      }
+      .chat-header-glow {
+        box-shadow: inset 0 -1px 0 rgba(148, 163, 184, 0.12);
+      }
+      .chip {
+        transition: transform 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
+      }
+      .chip:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.2), 0 4px 12px rgba(99, 102, 241, 0.1);
+      }
+      .typing {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .typing-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: rgba(129, 140, 248, 0.85);
+        box-shadow: 0 0 8px rgba(99, 102, 241, 0.35);
+        animation: bounce 1.1s infinite;
+      }
+      .typing-dot:nth-child(2) {
+        animation-delay: 0.12s;
+      }
+      .typing-dot:nth-child(3) {
+        animation-delay: 0.24s;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+          opacity: 0.55;
+        }
+        50% {
+          transform: translateY(-5px);
+          opacity: 1;
+        }
+      }
+
+      /* Bot reply bullets (readability) */
+      .bot-msg-content ul.bot-msg-list {
+        margin: 0.35rem 0 0;
+        padding-left: 1.1rem;
+        list-style-type: disc;
+      }
+      .bot-msg-content ul.bot-msg-list > li {
+        margin: 0.2rem 0;
+        padding-left: 0.25rem;
+      }
+      .bot-msg-content ul.bot-msg-list > li::marker {
+        color: rgba(56, 189, 248, 0.85);
+      }
+      .bot-msg-content p + ul.bot-msg-list {
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen antialiased selection:bg-indigo-500/35 selection:text-slate-100">
+    <div class="bg-matrix"></div>
+
+    <!-- Sticky Navbar -->
+    <header class="sticky top-0 z-50">
+      <nav class="glass border-b border-slate-600/40">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between gap-3 py-3">
+            <a href="#home" class="group flex items-center gap-3">
+              <!-- SANKALP circular logo (inline SVG) -->
+              <div class="relative h-11 w-11 shrink-0">
+                <svg viewBox="0 0 100 100" class="h-11 w-11 drop-shadow-[0_2px_14px_rgba(99,102,241,0.35)]">
+                  <defs>
+                    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.95" />
+                      <stop offset="55%" stop-color="#2dd4bf" stop-opacity="0.85" />
+                      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.9" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="44" fill="rgba(30,41,59,0.92)" stroke="url(#g1)" stroke-width="4" />
+                  <path
+                    d="M16 50c10-18 24-28 34-28 11 0 22 7 34 28-12 21-24 28-34 28-10 0-22-10-34-28Z"
+                    fill="rgba(99,102,241,0.12)"
+                    stroke="rgba(129,140,248,0.45)"
+                    stroke-width="2"
+                  />
+                  <text
+                    x="50"
+                    y="57"
+                    text-anchor="middle"
+                    font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial"
+                    font-size="18"
+                    font-weight="800"
+                    fill="#e2e8f0"
+                    style="letter-spacing: 2px"
+                  >
+                    SANKALP
+                  </text>
+                </svg>
+              </div>
+
+              <div class="hidden sm:block leading-tight">
+                <div class="text-xs tracking-[0.35em] text-slate-400">DELVE 2026</div>
+                <div class="text-sm font-semibold tracking-[0.28em] text-slate-100">
+                  GLITCH THE SYSTEM
+                </div>
+              </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-2 text-sm tracking-wide text-slate-300">
+              <a class="px-3 py-2 hover:text-slate-50" href="#home">Home</a>
+              <a class="px-3 py-2 hover:text-slate-50" href="#about">About</a>
+              <a class="px-3 py-2 hover:text-slate-50" href="#chatbot">Chatbot</a>
+              <a class="px-3 py-2 hover:text-slate-50" href="#tutorial">Tutorial</a>
+              <a class="px-3 py-2 hover:text-slate-50" href="#contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span                 class="tag hidden sm:inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-slate-300">
+                <span class="h-2 w-2 rounded-full bg-teal-400 shadow-[0_0_8px_rgba(45,212,191,0.45)]"></span>
+                AI Powered
+              </span>
+
+              <span
+                id="authUserPill"
+                class="tag hidden lg:inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-slate-300"
+                style="display:none;"
+              >
+                <span class="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.5)]"></span>
+                <span id="authUserText">Signed in</span>
+              </span>
+
+              <button
+                id="btnSignIn"
+                type="button"
+                class="hidden sm:inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-slate-300 border border-slate-600/40 bg-slate-800/70 hover:bg-slate-700/40 transition shadow-sm"
+              >
+                Sign In
+              </button>
+              <button
+                id="btnSignUp"
+                type="button"
+                class="hidden sm:inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-sky-200 border border-sky-500/35 bg-sky-500/10 hover:bg-sky-500/20 transition"
+              >
+                Sign Up
+              </button>
+
+              <a
+                href="#chatbot"
+                class="neon-btn inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white transition"
+              >
+                <span class="hidden sm:inline">Launch</span> RebadgeOnboard
+                <span aria-hidden="true" class="text-white/90">?</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile quick nav -->
+          <div class="md:hidden pb-3">
+            <div class="flex flex-wrap gap-2 text-xs text-slate-300">
+              <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#home">Home</a>
+              <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#about">About</a>
+              <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#chatbot">Chatbot</a>
+              <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#tutorial">Tutorial</a>
+              <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="relative z-10">
+      <!-- HOME -->
+      <section id="home" class="relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-10">
+          <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+            <div class="lg:col-span-7">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="tag rounded-full px-3 py-1 text-xs tracking-[0.25em] text-slate-300">SANKALP</span>
+                <span class="tag rounded-full px-3 py-1 text-xs tracking-[0.25em] text-slate-300">DELVE 2026</span>
+                <span class="tag inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs tracking-[0.25em] text-slate-300">
+                  <span class="inline-flex items-center gap-0.5 text-slate-400" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-3.5 w-3.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 00-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-3.5 w-3.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                  </span>
+                  Lock + Lightning Protocol
+                </span>
+              </div>
+
+              <h1 class="mt-6 text-4xl sm:text-6xl font-extrabold leading-[0.95] tracking-[0.18em] text-slate-100">
+                <span class="glitch" data-text="GLITCH THE SYSTEM">GLITCH THE SYSTEM</span>
+              </h1>
+              <p class="mt-4 text-lg sm:text-xl text-slate-300">
+                <span class="font-semibold text-slate-100">RebadgeOnboard</span> – Full Lifecycle Onboarding for Employee Rebadging
+              </p>
+              <p class="mt-3 text-slate-400 max-w-2xl">
+                One system. Zero chaos. Real-time HR + Employee sync — from rebadging to Day‑1 readiness.
+              </p>
+
+              <div class="mt-7 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#tutorial"
+                  class="neon-btn inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-white transition"
+                >
+                  Start Employee Journey
+                </a>
+                <button
+                  id="btnHrDemo"
+                  class="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-slate-100 border border-slate-600/40 bg-slate-800/50 hover:bg-slate-700/50 transition"
+                >
+                  HR Dashboard Demo
+                </button>
+              </div>
+
+              <div class="mt-8 grid gap-3 sm:grid-cols-3">
+                <div class="glass neon-border rounded-2xl p-4">
+                  <div class="text-xs tracking-[0.25em] text-slate-400">Completion Rate</div>
+                  <div class="mt-2 text-2xl font-bold text-slate-100">80%</div>
+                  <div class="mt-1 text-xs text-slate-400">120 - 150 employees complete</div>
+                </div>
+                <div class="glass neon-border rounded-2xl p-4">
+                  <div class="text-xs tracking-[0.25em] text-slate-400"> Delays Identified </div>
+                  <div class="mt-2 text-2xl font-bold text-slate-100"> 30 </div>
+                  <div class="mt-1 text-xs text-slate-400">Pending documents - steps</div>
+                </div>
+                <div class="glass neon-border rounded-2xl p-4">
+                  <div class="text-xs tracking-[0.25em] text-slate-400">Day‑1 Readiness</div>
+                  <div class="mt-2 text-2xl font-bold text-slate-100">85%</div>
+                  <div class="mt-1 text-xs text-slate-400">Readiness meter target</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5">
+              <!-- Readiness Meter -->
+              <div class="glass neon-border rounded-3xl p-6">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <div class="text-xs tracking-[0.28em] text-slate-400">Onboarding Readiness Meter</div>
+                    <div class="mt-2 text-lg font-semibold text-slate-100">150 Employee Scenario</div>
+                    <div class="mt-1 text-sm text-slate-400">Auto-animates to 85% readiness</div>
+                  </div>
+                  <span class="tag rounded-full px-3 py-1 text-xs text-slate-300">Innovative Extra</span>
+                </div>
+
+                <div class="mt-6 flex items-center justify-center">
+                  <div class="relative h-44 w-44">
+                    <svg viewBox="0 0 120 120" class="h-44 w-44">
+                      <defs>
+                        <linearGradient id="ring" x1="0" x2="1" y1="0" y2="1">
+                          <stop offset="0%" stop-color="#818cf8" stop-opacity="0.95"></stop>
+                          <stop offset="55%" stop-color="#2dd4bf" stop-opacity="0.88"></stop>
+                          <stop offset="100%" stop-color="#6366f1" stop-opacity="0.95"></stop>
+                        </linearGradient>
+                      </defs>
+                      <circle cx="60" cy="60" r="48" stroke="rgba(148,163,184,0.35)" stroke-width="10" fill="none" />
+                      <circle
+                        id="meterRing"
+                        cx="60"
+                        cy="60"
+                        r="48"
+                        stroke="url(#ring)"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-linecap="round"
+                        transform="rotate(-90 60 60)"
+                        stroke-dasharray="302"
+                        stroke-dashoffset="302"
+                        style="filter: drop-shadow(0 2px 10px rgba(99,102,241,0.35))"
+                      />
+                    </svg>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+                      <div class="text-4xl font-extrabold text-slate-100" id="meterValue">0%</div>
+                      <div class="mt-1 text-xs tracking-[0.25em] text-slate-400">READINESS</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-3 gap-2 text-center">
+                  <div class="tag rounded-xl p-3">
+                    <div class="text-xs text-slate-400">Uploaded</div>
+                    <div class="mt-1 font-semibold text-slate-100">150</div>
+                  </div>
+                  <div class="tag rounded-xl p-3">
+                    <div class="text-xs text-slate-400">Completed</div>
+                    <div class="mt-1 font-semibold text-slate-100">120</div>
+                  </div>
+                  <div class="tag rounded-xl p-3">
+                    <div class="text-xs text-slate-400">Pending</div>
+                    <div class="mt-1 font-semibold text-slate-100">30</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Marquee -->
+              <div class="mt-4 glass neon-border rounded-2xl p-3 marquee">
+                <div class="text-xs tracking-[0.28em] text-slate-300">
+                  <span class="text-sky-400">150 employees uploaded</span> -<span class="text-slate-100">120 completed</span> /
+                  <span class="text-teal-400">30 pending documents</span> - <span class="text-slate-300">HR reminders auto-sent</span> /
+                  <span class="text-sky-400">Dashboard readiness updated</span> -
+                  <span class="text-slate-100">Zero chaos onboarding</span> -
+                  <span class="text-teal-400">Offer + document verification</span> -
+                  <span class="text-sky-400">150 employees uploaded</span> - <span class="text-slate-100">120 completed</span> /
+                  <span class="text-teal-400">30 pending documents</span> - <span class="text-slate-300">HR reminders auto-sent</span> /
+                  <span class="text-sky-400">Dashboard readiness updated</span> /
+                  <span class="text-slate-100">Zero chaos onboarding</span> /
+                  <span class="text-teal-400">Offer + document verification</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+          <div class="flex items-end justify-between gap-4 flex-wrap">
+            <div>
+              <div class="text-xs tracking-[0.35em] text-slate-400">ABOUT</div>
+              <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-[0.14em] text-slate-100">
+                <span class="glitch" data-text="RebadgeOnboard System Brief">RebadgeOnboard System Brief</span>
+              </h2>
+              <p class="mt-3 max-w-3xl text-slate-400">
+                Built for SuppOrg Pvt. Ltd. – a secure, role-based onboarding website for HR Transfer & Rebadging of customer resources after a new business acquisition.
+              </p>
+            </div>
+            <div class="flex gap-2">
+              <span class="tag rounded-full px-3 py-1 text-xs text-slate-300">Professional UI</span>
+              <span class="tag rounded-full px-3 py-1 text-xs text-slate-300">Role-Based</span>
+              <span class="tag rounded-full px-3 py-1 text-xs text-slate-300">Real-Time Tracking</span>
+            </div>
+          </div>
+
+          <div class="mt-10 grid gap-4 lg:grid-cols-2">
+            <div class="glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">USE CASE</div>
+              <p class="mt-3 text-slate-300">
+                “RebadgeOnboard” – a supplier onboarding website required for HR Transfer & Rebadging of customer resources upon a new business acquisition.
+              </p>
+              <div class="mt-6 h-px bg-gradient-to-r from-sky-500/35 via-slate-500/30 to-transparent"></div>
+              <div class="mt-6 text-xs tracking-[0.28em] text-slate-400">GOAL</div>
+              <p class="mt-3 text-slate-300">
+                Build a full lifecycle onboarding website for SuppOrg that manages employee transfer (rebadging), communication, offer management, and onboarding readiness in one system.
+              </p>
+            </div>
+
+            <div class="glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">BACKGROUND (PROBLEM CONTEXT)</div>
+              <p class="mt-3 text-slate-300">
+                After a business contract is signed, SuppOrg must onboard a large number of customer employees quickly. This involves multiple steps, multiple stakeholders, and sensitive employee data.
+              </p>
+              <ol class="mt-5 space-y-2 text-sm text-slate-300">
+                <li class="flex gap-2"><span class="text-sky-400">➤</span> Sessions, offers, documents, onboarding</li>
+                <li class="flex gap-2"><span class="text-teal-400">➤</span> HR, managers, employees (and customer HR)</li>
+                <li class="flex gap-2"><span class="text-sky-400">➤</span> A centralised website to simplify employee experience</li>
+                <li class="flex gap-2"><span class="text-teal-400">➤</span> Real-time connection between employee actions and HR tracking</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="mt-10 grid gap-4 lg:grid-cols-12">
+            <div class="lg:col-span-5 glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">USERS (4 ROLES)</div>
+              <div class="mt-5 grid gap-3 sm:grid-cols-2">
+                <div class="tag rounded-2xl p-4">
+                  <div class="text-sm font-semibold text-slate-100">Rebadging Employee</div>
+                  <div class="mt-2 text-xs text-slate-400">Checklist, document upload, clear timelines, Q&A.</div>
+                </div>
+                <div class="tag rounded-2xl p-4">
+                  <div class="text-sm font-semibold text-slate-100">HR Transition Manager</div>
+                  <div class="mt-2 text-xs text-slate-400">Communications, terms comparison, offers, dashboards.</div>
+                </div>
+                <div class="tag rounded-2xl p-4">
+                  <div class="text-sm font-semibold text-slate-100">Hiring/Line Manager</div>
+                  <div class="mt-2 text-xs text-slate-400">Manager training, assimilation and productivity support.</div>
+                </div>
+                <div class="tag rounded-2xl p-4">
+                  <div class="text-sm font-semibold text-slate-100">Customer HR / Incumbent HR</div>
+                  <div class="mt-2 text-xs text-slate-400">Shares HR data for due diligence and transfer prep.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">USE-CASE SUMMARY</div>
+              <ol class="mt-5 grid gap-3 sm:grid-cols-2 text-sm text-slate-300">
+                <li class="tag rounded-2xl p-4"><span class="text-sky-400 font-semibold">1.</span> HR uploads employee data</li>
+                <li class="tag rounded-2xl p-4"><span class="text-teal-400 font-semibold">2.</span> Employees receive login access</li>
+                <li class="tag rounded-2xl p-4"><span class="text-sky-400 font-semibold">3.</span> Guided onboarding journey completion</li>
+                <li class="tag rounded-2xl p-4"><span class="text-teal-400 font-semibold">4.</span> HR monitors progress & sends reminders</li>
+                <li class="tag rounded-2xl p-4 sm:col-span-2"><span class="text-sky-400 font-semibold">5.</span> System tracks readiness for Day 1</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="mt-10 glass neon-border rounded-3xl p-6">
+            <div class="flex items-end justify-between gap-4 flex-wrap">
+              <div>
+                <div class="text-xs tracking-[0.28em] text-slate-400">INTEGRATED DESIGN</div>
+                <div class="mt-2 text-lg font-semibold text-slate-100">12 key pages (can be reduced)</div>
+              </div>
+              <div class="text-xs text-slate-400">All pages support Employee + HR views where applicable.</div>
+            </div>
+            <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">1. Login & Authentication</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">2. Unified Dashboard (Role-based)</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">3. Employee Profile</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">4. Guided Onboarding Journey</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">5. Offer Management</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">6. Document Upload & Verification</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">7. Communication & Session</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">8. Task & Checklist</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">9. HR Monitoring Dashboard</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">10. Access & Tooling Guidance</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">11. Digital Access Request (Optional)</div>
+              <div class="tag rounded-2xl p-4 text-sm text-slate-300">12. Helpdesk / Support</div>
+            </div>
+          </div>
+
+          <div class="mt-10 grid gap-4 lg:grid-cols-2">
+            <div class="glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">FUNCTIONAL REQUIREMENTS (FR)</div>
+              <ul class="mt-5 space-y-2 text-sm text-slate-300">
+                <li class="flex gap-2"><span class="text-sky-400">➤</span> Role-Based Access Control</li>
+                <li class="flex gap-2"><span class="text-teal-400">➤</span> Guided Onboarding Workflow</li>
+                <li class="flex gap-2"><span class="text-sky-400">➤</span> Document & Offer Management</li>
+                <li class="flex gap-2"><span class="text-teal-400">➤</span> HR Dashboard & Progress Tracking</li>
+                <li class="mt-3 text-xs text-slate-400">
+                  HR can track completion rates, identify delays or missing steps, and view onboarding readiness.
+                </li>
+              </ul>
+            </div>
+
+            <div class="glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">NON-FUNCTIONAL REQUIREMENTS (NFR)</div>
+              <ul class="mt-5 space-y-2 text-sm text-slate-300">
+                <li class="flex gap-2"><span class="text-sky-400">➤</span> Privacy by Design</li>
+                <li class="flex gap-2"><span class="text-teal-400">➤</span> Secure Authentication</li>
+                <li class="flex gap-2"><span class="text-sky-400">➤</span> Basic Security & Audit</li>
+              </ul>
+              <div class="mt-6 h-px bg-gradient-to-r from-teal-400/25 via-sky-500/20 to-transparent"></div>
+              <div class="mt-6 text-xs tracking-[0.28em] text-slate-400">EXAMPLE SCENARIO</div>
+              <p class="mt-3 text-sm text-slate-300">
+                HR uploads 150 employees / employees complete onboarding steps / 120 complete / 30 pending due to missing documents / HR identifies delays and sends reminders / dashboard shows overall readiness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHATBOT -->
+      <section id="chatbot" class="relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+          <div class="text-center">
+            <span class="text-xs tracking-[0.35em] text-slate-400">// AI SUPPORT</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-[0.14em] text-slate-100">
+              <span class="text-slate-100">RebadgeBot</span> – Your Onboarding AI
+            </h2>
+            <p class="mt-3 max-w-3xl mx-auto text-slate-400">
+              Instant answers to any onboarding question, 24/7. Powered by SuppOrg's knowledge base.
+            </p>
+          </div>
+
+          <div class="mt-10 max-w-3xl mx-auto">
+            <div class="chat-shell glass neon-border rounded-3xl overflow-hidden">
+              <div class="chat-header-glow flex items-center gap-3 px-5 py-4 border-b border-slate-600/40 bg-gradient-to-r from-indigo-950/50 via-slate-800/70 to-teal-950/35">
+                <div class="h-11 w-11 rounded-2xl bg-gradient-to-br from-blue-500/15 via-indigo-400/10 to-teal-500/15 border border-slate-600/40 flex items-center justify-center text-sky-400" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-sm font-semibold text-slate-100">RebadgeBot</div>
+                  <div class="text-xs text-emerald-400">Online — Ready to Help</div>
+                </div>
+                <div class="ml-auto text-[11px] tracking-[0.18em] text-slate-400">SUPPORG AI v2.0</div>
+              </div>
+
+              <div id="chatMessages" class="thin-scrollbar h-[22rem] sm:h-[24rem] overflow-y-auto px-5 py-5 bg-slate-800/50" aria-label="Chat messages"></div>
+
+              <div class="flex flex-wrap gap-2 px-5 py-3 border-t border-slate-600/40 bg-slate-800/50" id="chatSuggestions">
+                <button class="chip tag inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50" type="button" onclick="sendSuggestion('What documents do I need to submit?')">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+                  </svg>
+                  Document checklist
+                </button>
+                <button class="chip tag inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50" type="button" onclick="sendSuggestion('How do I accept my offer letter?')">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                  Accept offer
+                </button>
+                <button class="chip tag inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50" type="button" onclick="sendSuggestion('When is my Day-1 date?')">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5a2.25 2.25 0 002.25-2.25m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5a2.25 2.25 0 012.25 2.25v7.5" />
+                  </svg>
+                  Day-1 info
+                </button>
+                <button class="chip tag inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50" type="button" onclick="sendSuggestion('I need IT access help')">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                  </svg>
+                  IT access
+                </button>
+              </div>
+
+              <div class="px-5 py-4 border-t border-slate-600/40 bg-slate-900/35">
+                <form id="chatForm" class="flex gap-2">
+                  <div class="relative min-w-0 flex-1">
+                    <span class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-slate-400" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+                        />
+                      </svg>
+                    </span>
+                    <input
+                      type="text"
+                      class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500/25"
+                      id="chatInput"
+                      placeholder="Ask me anything about your onboarding…"
+                      onkeydown="if(event.key==='Enter'){event.preventDefault();sendChat();}"
+                    />
+                  </div>
+                  <button class="neon-btn rounded-xl px-5 py-3 text-sm font-semibold text-white transition" type="button" onclick="sendChat()">
+                    ?
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TUTORIAL -->
+      <section id="tutorial" class="relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+          <div class="flex items-end justify-between gap-4 flex-wrap">
+            <div>
+              <div class="text-xs tracking-[0.35em] text-slate-400">TUTORIAL</div>
+              <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-[0.14em] text-slate-100">
+                <span class="glitch" data-text="Step-by-Step Onboarding Guide">Step-by-Step Onboarding Guide</span>
+              </h2>
+              <p class="mt-3 max-w-3xl text-slate-400">
+                Interactive journey for Employees + HR Transition Managers using the 150-employee scenario.
+              </p>
+            </div>
+
+            <div class="glass neon-border rounded-2xl p-2 flex items-center gap-2">
+              <button
+                type="button"
+                id="roleEmployee"
+                class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-100 bg-slate-800/50 hover:bg-slate-600/50 transition"
+              >
+                Employee View
+              </button>
+              <button
+                type="button"
+                id="roleHR"
+                class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-300 hover:bg-slate-700/50 transition"
+              >
+                HR View
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-10 grid gap-4 lg:grid-cols-12">
+            <div class="lg:col-span-5 glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">TIMELINE (6 STEPS)</div>
+              <div class="mt-6 space-y-3" id="timeline">
+                <!-- filled by JS -->
+              </div>
+              <div class="mt-6 text-xs text-slate-400">
+                Tip: click <span class="text-slate-300">See Demo</span> to trigger a micro-interaction.
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 glass neon-border rounded-3xl p-6">
+              <div class="flex items-center justify-between gap-3 flex-wrap">
+                <div>
+                  <div class="text-xs tracking-[0.28em] text-slate-400">INTERACTIVE PANEL</div>
+                  <div class="mt-2 text-lg font-semibold text-slate-100" id="tutorialTitle">Employee Journey</div>
+                </div>
+                <div class="tag rounded-full px-3 py-1 text-xs text-slate-300" id="tutorialRolePill">Employee</div>
+              </div>
+
+              <div class="mt-6 grid gap-3 sm:grid-cols-2" id="tutorialCards">
+                <!-- filled by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+          <div class="flex items-end justify-between gap-4 flex-wrap">
+            <div>
+              <div class="text-xs tracking-[0.35em] text-slate-400">CONTACT</div>
+              <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-[0.14em] text-slate-100">
+                <span class="glitch" data-text="Get in Touch">Get in Touch</span>
+              </h2>
+              <p class="mt-3 max-w-3xl text-slate-400">
+                Competition contacts (from the official casebook) + a fictional SuppOrg HR contact form.
+              </p>
+            </div>
+            <div class="tag rounded-full px-3 py-1 text-xs text-slate-300">Digital Grid Background</div>
+          </div>
+
+          <div class="mt-10 grid gap-4 lg:grid-cols-12">
+            <div class="lg:col-span-5 glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">COMPETITION CONTACT DETAILS</div>
+              <div class="mt-5 space-y-3 text-sm text-slate-300">
+                <div class="tag rounded-2xl p-4">
+                  <div class="text-xs text-slate-400">Email</div>
+                  <div class="mt-1 font-semibold text-slate-100">adityranjanwork9@gmail.com</div>
+                </div>
+                <div class="tag rounded-2xl p-4">
+                  <div class="text-xs text-slate-400">For further queries</div>
+                  <div class="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <div class="rounded-xl border border-slate-600/40 bg-slate-800/50 p-3">
+                      <div class="text-xs text-slate-400">Gaurav</div>
+                      <div class="mt-1 font-semibold text-slate-100">+917723040876</div>
+                    </div>
+                    <div class="rounded-xl border border-slate-600/40 bg-slate-800/50 p-3">
+                      <div class="text-xs text-slate-400">Aditya</div>
+                      <div class="mt-1 font-semibold text-slate-100">+918298860679</div>
+                    </div>
+                    <div class="rounded-xl border border-slate-600/40 bg-slate-800/50 p-3">
+                      <div class="text-xs text-slate-400">Arvind</div>
+                      <div class="mt-1 font-semibold text-slate-100">+919525359523</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 text-xs tracking-[0.28em] text-slate-400">TEAM MEMBERS</div>
+              <div class="mt-4 grid gap-2">
+                <div class="tag rounded-2xl p-4 text-sm text-slate-300">
+                  <div class="font-semibold text-slate-100">Tech Lead</div>
+                  <div class="mt-1 text-slate-400">Mobile: +918298860679</div>
+                  <div class="mt-1 text-slate-400">Mobile: +917723040876</div>
+                </div>
+                <div class="tag rounded-2xl p-4 text-sm text-slate-300">
+                  <div class="font-semibold text-slate-100">Design Lead</div>
+                  <div class="mt-1 text-slate-400">Mobile: +919525359523</div>
+                </div>
+              </div>
+
+              <div class="mt-6 text-xs tracking-[0.28em] text-slate-400">SUPPORG (FICTIONAL) HR HELPDESK</div>
+              <div class="mt-4 tag rounded-2xl p-4 text-sm text-slate-300">
+                <div class="font-semibold text-slate-100">SuppOrg HR Transition Desk</div>
+                <div class="mt-1 text-slate-400">Email: hr.transition@supporg.example</div>
+                <div class="text-slate-400">Phone: +91 90000 12345</div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 glass neon-border rounded-3xl p-6">
+              <div class="text-xs tracking-[0.28em] text-slate-400">MESSAGE SUPPORG HR</div>
+              <form id="contactForm" class="mt-6 grid gap-3">
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <label class="text-xs text-slate-400">Name</label>
+                    <div class="relative mt-2">
+                      <span class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-slate-400" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                          />
+                        </svg>
+                      </span>
+                      <input
+                        id="cName"
+                        type="text"
+                        class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500/25"
+                        placeholder="Your name"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label class="text-xs text-slate-400">Email</label>
+                    <div class="relative mt-2">
+                      <span class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-slate-400" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                          />
+                        </svg>
+                      </span>
+                      <input
+                        id="cEmail"
+                        type="email"
+                        class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500/25"
+                        placeholder="you@domain.com"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <label class="text-xs text-slate-400">Message</label>
+                  <div class="relative mt-2">
+                    <span class="pointer-events-none absolute left-3 top-3 z-10 text-slate-400" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                        />
+                      </svg>
+                    </span>
+                    <textarea
+                      id="cMessage"
+                      rows="5"
+                      class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-slate-400 focus:ring-1 focus:ring-slate-400/20"
+                      placeholder="Write your query (document issues, checklist help, offer clarification, etc.)"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                  <div id="contactStatus" class="text-xs text-slate-400"></div>
+                  <button type="submit" class="neon-btn rounded-xl px-6 py-3 text-sm font-semibold text-white transition">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-slate-600/40">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <div class="text-sm font-semibold text-slate-100">© 2026 SANKALP – The Management Society | DELVE</div>
+            <div class="mt-2 text-xs text-slate-400">Built for Glitch the System Case – RebadgeOnboard</div>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs text-slate-400">
+            <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#home">Home</a>
+            <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#about">About</a>
+            <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#chatbot">Chatbot</a>
+            <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#tutorial">Tutorial</a>
+            <a class="tag rounded-full px-3 py-2 hover:text-slate-50" href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating AI Bot for viewers -->
+    <button
+      id="viewerBotFab"
+      type="button"
+      class="fab fixed bottom-5 right-5 z-[65] neon-btn inline-flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-semibold text-white transition"
+      aria-label="Open AI bot"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 shrink-0" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+      </svg>
+      AI Bot
+    </button>
+
+    <div
+      id="viewerBotBackdrop"
+      class="modal-backdrop fixed inset-0 z-[80] bg-slate-950/70 p-4"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="mx-auto max-w-md">
+        <div class="glass neon-border rounded-3xl p-5">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <div class="text-xs tracking-[0.28em] text-slate-400">AI BOT</div>
+              <div class="mt-1 text-base font-semibold text-slate-100">Viewer Assistant</div>
+              <div class="mt-1 text-xs text-slate-400">Ask about onboarding, documents, offers, HR tracking.</div>
+            </div>
+            <button id="viewerBotClose" type="button" class="tag rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50">
+              Close
+            </button>
+          </div>
+
+          <div
+            id="viewerBotLog"
+            class="thin-scrollbar mt-4 h-72 overflow-y-auto rounded-2xl border border-slate-600/40 bg-slate-800/50 p-4"
+            aria-label="Viewer bot messages"
+          ></div>
+
+          <form id="viewerBotForm" class="mt-3 flex gap-2">
+            <div class="relative min-w-0 flex-1">
+              <span class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-slate-400" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+                  />
+                </svg>
+              </span>
+              <input
+                id="viewerBotInput"
+                type="text"
+                autocomplete="off"
+                placeholder="💬 Type a question…"
+                class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500/25"
+              />
+            </div>
+            <button type="submit" class="neon-btn rounded-xl px-4 py-3 text-sm font-semibold text-white transition">
+              Send
+            </button>
+          </form>
+
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button data-vsuggest type="button" class="tag rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50">Document checklist</button>
+            <button data-vsuggest type="button" class="tag rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50">Offer help</button>
+            <button data-vsuggest type="button" class="tag rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50">HR dashboard</button>
+            <button data-vsuggest type="button" class="tag rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50">Day‑1 readiness</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      id="modalBackdrop"
+      class="modal-backdrop fixed inset-0 z-[60] bg-slate-950/65 p-4"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="mx-auto max-w-xl">
+        <div class="glass neon-border rounded-3xl p-6">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="text-xs tracking-[0.28em] text-slate-400">TRY DEMO</div>
+              <div id="modalTitle" class="mt-2 text-lg font-semibold text-slate-100">Demo</div>
+            </div>
+            <button id="modalClose" class="tag rounded-full px-3 py-2 text-xs text-slate-300 hover:text-slate-50">Close</button>
+          </div>
+          <div id="modalBody" class="mt-4 text-sm text-slate-300"></div>
+          <div class="mt-6 rounded-2xl border border-slate-600/40 bg-slate-800/50 p-4">
+            <div class="flex items-center justify-between gap-3 flex-wrap">
+              <div class="text-xs text-slate-400">Simulation</div>
+              <div class="text-xs text-slate-400">Visual-only micro-interaction</div>
+            </div>
+            <div class="mt-4 grid gap-3 sm:grid-cols-3">
+              <div class="tag rounded-2xl p-4 text-center pulse-glow">
+                <div class="text-xs text-slate-400">Signal</div>
+                <div class="mt-1 font-semibold text-slate-100">SYNC</div>
+              </div>
+              <div class="tag rounded-2xl p-4 text-center">
+                <div class="text-xs text-slate-400">Queue</div>
+                <div class="mt-1 font-semibold text-slate-100">TASKS</div>
+              </div>
+              <div class="tag rounded-2xl p-4 text-center">
+                <div class="text-xs text-slate-400">Status</div>
+                <div class="mt-1 font-semibold text-slate-100">LIVE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auth Modal (Sign In / Sign Up) -->
+    <div
+      id="authBackdrop"
+      class="modal-backdrop fixed inset-0 z-[70] bg-slate-950/70 p-4"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="mx-auto max-w-xl">
+        <div class="glass neon-border rounded-3xl p-6">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <div class="text-xs tracking-[0.28em] text-slate-400">AUTH</div>
+              <div id="authTitle" class="mt-2 text-lg font-semibold text-slate-100">Sign In</div>
+              <div id="authSub" class="mt-1 text-sm text-slate-400">Demo login (stored locally on this device).</div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button
+                id="authTabSignin"
+                type="button"
+                class="tag rounded-full px-4 py-2 text-xs text-slate-100 hover:text-slate-50 border border-slate-600/40 bg-slate-800/50"
+              >
+                Sign In
+              </button>
+              <button
+                id="authTabSignup"
+                type="button"
+                class="tag rounded-full px-4 py-2 text-xs text-slate-300 hover:text-slate-50"
+              >
+                Sign Up
+              </button>
+              <button id="authClose" type="button" class="tag rounded-full px-4 py-2 text-xs text-slate-300 hover:text-slate-50">
+                Close
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-5 grid gap-3">
+            <div class="tag rounded-2xl p-4">
+              <div class="text-xs tracking-[0.24em] text-slate-400">ROLE</div>
+              <div class="mt-3 flex flex-wrap gap-2">
+                <button data-role="employee" type="button" class="authRoleBtn tag rounded-full px-4 py-2 text-xs text-slate-300 hover:text-slate-50 transition">
+                  Employee
+                </button>
+                <button data-role="hr" type="button" class="authRoleBtn tag rounded-full px-4 py-2 text-xs text-slate-300 hover:text-slate-50 transition">
+                  HR Transition
+                </button>
+                <button data-role="manager" type="button" class="authRoleBtn tag rounded-full px-4 py-2 text-xs text-slate-300 hover:text-slate-50 transition">
+                  Line Manager
+                </button>
+                <button data-role="customerhr" type="button" class="authRoleBtn tag rounded-full px-4 py-2 text-xs text-slate-300 hover:text-slate-50 transition">
+                  Customer HR
+                </button>
+              </div>
+              <div class="mt-3 text-xs text-slate-400">This role must match what you signed up with.</div>
+            </div>
+
+            <div id="authSignupNameWrap" class="hidden">
+              <label class="text-xs text-slate-400">Full name</label>
+              <div class="relative mt-2">
+                <span class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-slate-400" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="authName"
+                  type="text"
+                  class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500/25"
+                  placeholder="Your name"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="text-xs text-slate-400">Email / Employee ID</label>
+              <div class="relative mt-2">
+                <span class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-slate-400" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="authEmail"
+                  type="text"
+                  class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500/25"
+                  placeholder="name@domain.com or EMP123"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="text-xs text-slate-400">Password</label>
+              <div class="relative mt-2">
+                <span class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-slate-400" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="authPassword"
+                  type="password"
+                  class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-slate-400 focus:ring-1 focus:ring-slate-400/20"
+                  placeholder="Enter password"
+                />
+              </div>
+            </div>
+
+            <div id="authSignupConfirmWrap" class="hidden">
+              <label class="text-xs text-slate-400">Confirm password</label>
+              <div class="relative mt-2">
+                <span class="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-slate-400" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                    />
+                  </svg>
+                </span>
+                <input
+                  id="authPassword2"
+                  type="password"
+                  class="w-full rounded-xl border border-slate-600/40 bg-slate-800/50 py-3 pl-10 pr-4 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:border-slate-400 focus:ring-1 focus:ring-slate-400/20"
+                  placeholder="Repeat password"
+                />
+              </div>
+            </div>
+
+            <div id="authStatus" class="text-xs text-slate-400"></div>
+
+            <div class="flex items-center justify-between gap-3 flex-wrap">
+              <button
+                id="btnSignOut"
+                type="button"
+                class="hidden rounded-xl px-4 py-3 text-sm font-semibold text-slate-100 border border-slate-600/40 bg-slate-800/50 hover:bg-slate-700/50 transition"
+              >
+                Sign Out
+              </button>
+              <button id="authSubmit" type="button" class="neon-btn rounded-xl px-6 py-3 text-sm font-semibold text-white transition">
+                Sign In
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ----- Utils -----
+      const $ = (sel) => document.querySelector(sel);
+      const escapeHtml = (s) =>
+        String(s)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+
+      /** Renders bot text: intro paragraphs + lines starting with "- ", "• ", "* " as bullets. Single-line "step → step" flows become bullets. */
+      function formatBotMessageHtml(raw) {
+        const s = String(raw).trim();
+        if (!s) return "";
+
+        const lines = s.split(/\r?\n/).map((l) => l.trim());
+        const parts = [];
+        let listHtml = [];
+
+        const flushList = () => {
+          if (!listHtml.length) return;
+          parts.push(
+            `<ul class="bot-msg-list space-y-0.5">${listHtml.map((item) => `<li>${item}</li>`).join("")}</ul>`
+          );
+          listHtml = [];
+        };
+
+        for (const line of lines) {
+          if (!line) continue;
+          const m = line.match(/^[-•*]\s+(.+)$/);
+          if (m) {
+            listHtml.push(escapeHtml(m[1]));
+          } else {
+            flushList();
+            parts.push(`<p class="mb-0">${escapeHtml(line)}</p>`);
+          }
+        }
+        flushList();
+
+        if (parts.length) return parts.join("");
+
+        if (s.includes(" → ")) {
+          const steps = s.split(/\s*→\s*/).map((x) => x.trim()).filter(Boolean);
+          if (steps.length > 1) {
+            return `<ul class="bot-msg-list space-y-0.5">${steps.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>`;
+          }
+        }
+
+        return `<p class="mb-0">${escapeHtml(s)}</p>`;
+      }
+
+      // ----- Readiness Meter (85%) -----
+      (function readinessMeter() {
+        const target = 85;
+        const ring = $("#meterRing");
+        const value = $("#meterValue");
+        if (!ring || !value) return;
+
+        const circumference = 302; // matches SVG dasharray
+        const durationMs = 1200;
+        const start = performance.now();
+
+        function tick(now) {
+          const t = Math.min(1, (now - start) / durationMs);
+          const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+          const current = Math.round(eased * target);
+          const offset = circumference * (1 - current / 100);
+          ring.style.strokeDashoffset = String(offset);
+          value.textContent = `${current}%`;
+          if (t < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+      })();
+
+      // ----- HR Demo button -----
+      $("#btnHrDemo")?.addEventListener("click", () => {
+        openModal(
+          "HR Dashboard Demo",
+          "Demo: identify 30 pending employees, send reminders, and watch readiness update in real-time. (Visual simulation — no backend.)"
+        );
+      });
+
+      // ----- Modal -----
+      const backdrop = $("#modalBackdrop");
+      const closeBtn = $("#modalClose");
+      const modalTitle = $("#modalTitle");
+      const modalBody = $("#modalBody");
+
+      function openModal(title, body) {
+        modalTitle.textContent = title;
+        modalBody.textContent = body;
+        backdrop.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal() {
+        backdrop.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+      closeBtn?.addEventListener("click", closeModal);
+      backdrop?.addEventListener("click", (e) => {
+        if (e.target === backdrop) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && backdrop?.getAttribute("aria-hidden") === "false") closeModal();
+      });
+
+      // ----- Auth (Sign In / Sign Up) – demo but functional via localStorage -----
+      const AUTH_KEY = "rebadgeonboard_users_v1";
+      const AUTH_SESSION_KEY = "rebadgeonboard_session_v1";
+
+      const authBackdrop = $("#authBackdrop");
+      const authTitle = $("#authTitle");
+      const authSub = $("#authSub");
+      const authClose = $("#authClose");
+      const authTabSignin = $("#authTabSignin");
+      const authTabSignup = $("#authTabSignup");
+      const authNameWrap = $("#authSignupNameWrap");
+      const authConfirmWrap = $("#authSignupConfirmWrap");
+      const authStatus = $("#authStatus");
+      const authSubmit = $("#authSubmit");
+      const btnSignIn = $("#btnSignIn");
+      const btnSignUp = $("#btnSignUp");
+      const btnSignOut = $("#btnSignOut");
+      const authUserPill = $("#authUserPill");
+      const authUserText = $("#authUserText");
+
+      let authMode = "signin";
+      let selectedRole = "employee";
+
+      function loadUsers() {
+        try {
+          const raw = localStorage.getItem(AUTH_KEY);
+          const parsed = raw ? JSON.parse(raw) : [];
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+      function saveUsers(users) {
+        localStorage.setItem(AUTH_KEY, JSON.stringify(users));
+      }
+      function setAuthStatus(msg, kind = "info") {
+        authStatus.textContent = msg || "";
+        if (kind === "ok") authStatus.className = "text-xs text-emerald-400";
+        else if (kind === "warn") authStatus.className = "text-xs text-amber-400";
+        else if (kind === "err") authStatus.className = "text-xs text-red-400";
+        else authStatus.className = "text-xs text-slate-400";
+      }
+
+      function setAuthMode(mode) {
+        authMode = mode === "signup" ? "signup" : "signin";
+        const isSignup = authMode === "signup";
+
+        authTitle.textContent = isSignup ? "Sign Up" : "Sign In";
+        authSub.textContent = isSignup
+          ? "Create a demo account (stored locally on this device)."
+          : "Demo login (stored locally on this device).";
+
+        authNameWrap.classList.toggle("hidden", !isSignup);
+        authConfirmWrap.classList.toggle("hidden", !isSignup);
+        authSubmit.textContent = isSignup ? "Create Account" : "Sign In";
+
+        authTabSignin.className =
+          "tag rounded-full px-4 py-2 text-xs hover:text-slate-50 " +
+          (!isSignup ? "text-slate-100 hover:text-slate-50 border border-slate-600/40 bg-slate-800/50" : "text-slate-300");
+        authTabSignup.className =
+          "tag rounded-full px-4 py-2 text-xs hover:text-slate-50 " +
+          (isSignup ? "text-slate-100 hover:text-slate-50 border border-slate-600/40 bg-slate-800/50" : "text-slate-300");
+
+        setAuthStatus("");
+      }
+
+      function openAuthModal(mode) {
+        authBackdrop.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        setAuthMode(mode);
+      }
+      function closeAuthModal() {
+        authBackdrop.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      function setSelectedRole(role) {
+        selectedRole = role;
+        document.querySelectorAll(".authRoleBtn").forEach((btn) => {
+          const active = btn.getAttribute("data-role") === role;
+          btn.className =
+            "authRoleBtn tag rounded-full px-4 py-2 text-xs hover:text-slate-50 transition " +
+            (active ? "text-slate-100 border border-sky-500/40 bg-sky-500/15" : "text-slate-300");
+        });
+      }
+
+      function getSession() {
+        try {
+          const raw = localStorage.getItem(AUTH_SESSION_KEY);
+          return raw ? JSON.parse(raw) : null;
+        } catch {
+          return null;
+        }
+      }
+      function setSession(session) {
+        localStorage.setItem(AUTH_SESSION_KEY, JSON.stringify(session));
+      }
+      function clearSession() {
+        localStorage.removeItem(AUTH_SESSION_KEY);
+      }
+
+      function renderAuthHeader() {
+        const session = getSession();
+        if (!session) {
+          authUserPill.style.display = "none";
+          btnSignOut.classList.add("hidden");
+          btnSignIn.classList.remove("hidden");
+          btnSignUp.classList.remove("hidden");
+          return;
+        }
+        authUserText.textContent = `${session.name} – ${session.role}`;
+        authUserPill.style.display = "";
+        btnSignOut.classList.remove("hidden");
+        btnSignIn.classList.add("hidden");
+        btnSignUp.classList.add("hidden");
+      }
+
+      async function submitAuth() {
+        const name = ($("#authName")?.value || "").trim();
+        const email = ($("#authEmail")?.value || "").trim();
+        const pass = ($("#authPassword")?.value || "").trim();
+        const pass2 = ($("#authPassword2")?.value || "").trim();
+
+        if (!email || email.length < 3) return setAuthStatus("Enter a valid Email / Employee ID.", "warn");
+        if (!pass || pass.length < 4) return setAuthStatus("Password must be at least 4 characters (demo).", "warn");
+
+        const users = loadUsers();
+        const existing = users.find((u) => (u.email || "").toLowerCase() === email.toLowerCase());
+
+        if (authMode === "signup") {
+          if (!name || name.length < 2) return setAuthStatus("Enter your full name.", "warn");
+          if (pass !== pass2) return setAuthStatus("Passwords do not match.", "warn");
+          if (existing) return setAuthStatus("Account already exists. Try Sign In.", "err");
+
+          users.push({ name, email, password: pass, role: selectedRole, createdAt: new Date().toISOString() });
+          saveUsers(users);
+          setAuthStatus("Account created. Now sign in.", "ok");
+          setAuthMode("signin");
+          return;
+        }
+
+        // signin
+        if (!existing || existing.password !== pass) return setAuthStatus("Invalid credentials. Try Sign Up.", "err");
+        if (existing.role !== selectedRole) return setAuthStatus("Role mismatch. Select your signed-up role.", "warn");
+
+        setSession({ name: existing.name, email: existing.email, role: existing.role, signedInAt: new Date().toISOString() });
+        setAuthStatus(`Signed in as ${existing.name}.`, "ok");
+        renderAuthHeader();
+        await new Promise((r) => setTimeout(r, 450));
+        closeAuthModal();
+      }
+
+      function signOut() {
+        clearSession();
+        renderAuthHeader();
+      }
+
+      btnSignIn?.addEventListener("click", () => openAuthModal("signin"));
+      btnSignUp?.addEventListener("click", () => openAuthModal("signup"));
+      authClose?.addEventListener("click", closeAuthModal);
+      authBackdrop?.addEventListener("click", (e) => {
+        if (e.target === authBackdrop) closeAuthModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && authBackdrop?.getAttribute("aria-hidden") === "false") closeAuthModal();
+      });
+      authTabSignin?.addEventListener("click", () => setAuthMode("signin"));
+      authTabSignup?.addEventListener("click", () => setAuthMode("signup"));
+      authSubmit?.addEventListener("click", submitAuth);
+      btnSignOut?.addEventListener("click", () => {
+        signOut();
+        closeAuthModal();
+      });
+      document.querySelectorAll(".authRoleBtn").forEach((btn) => {
+        btn.addEventListener("click", () => setSelectedRole(btn.getAttribute("data-role")));
+      });
+      setSelectedRole("employee");
+      renderAuthHeader();
+
+      // ----- Chatbot -----
+      const chatLog = $("#chatMessages");
+      const chatForm = $("#chatForm");
+      const chatInput = $("#chatInput");
+
+      const botName = "RebadgeBot";
+      const qa = [
+        {
+          keys: ["upload", "document", "documents", "verification", "verify"],
+          answer:
+            "Here’s how document upload and verification works:\n\n- Open Document Upload & Verification in the portal\n- Select the document type\n- Upload files and submit for verification\n- If a document is missing or unclear, it shows on your checklist and HR is notified",
+        },
+        {
+          keys: ["dashboard", "hr", "tracking", "progress", "monitor"],
+          answer:
+            "The HR Monitoring Dashboard shows:\n\n- Completion rates and pending steps\n- Delays and blockers\n- Overall onboarding readiness (Day‑1)\n- Options to remind employees stuck on documents or offers",
+        },
+        {
+          keys: ["checklist", "employee", "tasks", "journey"],
+          answer:
+            "Your checklist usually includes:\n\n- Profile confirmation\n- Offer review\n- Required document uploads\n- Sessions and communications\n- Tooling and access guidance\n- Final readiness confirmation",
+        },
+        {
+          keys: ["offer", "terms", "mismatch", "compare"],
+          answer:
+            "Managing your offer:\n\n- Use Offer Management to review and acknowledge details\n- If anything doesn’t match, raise a query from the portal\n- HR Transition Manager can compare terms and resolve issues before you accept",
+        },
+        {
+          keys: ["login", "access", "authentication", "password"],
+          answer:
+            "Login and access:\n\n- After HR uploads data, employees receive portal access\n- Use Login & Authentication to sign in\n- For access issues, open a ticket via Helpdesk / Support",
+        },
+        {
+          keys: ["privacy", "secure", "security", "audit"],
+          answer:
+            "Security and privacy highlights:\n\n- Privacy by Design\n- Secure authentication\n- Basic security and audit practices to protect employee data",
+        },
+        {
+          keys: ["day 1", "readiness", "ready", "onboarding readiness"],
+          answer:
+            "Day‑1 readiness reflects:\n\n- Progress on offers, documents, sessions, and required steps\n- HR can spot delays and send reminders\n- Readiness improves as steps complete before Day‑1",
+        },
+      ];
+
+      function nowLabel() {
+        return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      }
+
+      function addMsg({ from, text }) {
+        const isBot = from === "bot";
+        const wrapper = document.createElement("div");
+        wrapper.className = "mb-3 flex " + (isBot ? "justify-start" : "justify-end");
+
+        const bubble = document.createElement("div");
+        bubble.className =
+          "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed border " +
+          (isBot
+            ? "border-slate-600/40 bg-slate-800/70 shadow-sm text-slate-100"
+            : "border-slate-600/40 bg-sky-500/10 text-slate-100");
+
+        const meta = document.createElement("div");
+        meta.className = "mb-1 text-[11px] tracking-[0.18em] " + (isBot ? "text-sky-400" : "text-slate-400");
+        meta.textContent = isBot ? botName : "You";
+
+        const content = document.createElement("div");
+        content.className = isBot ? "bot-msg-content text-sm leading-relaxed space-y-2" : "text-sm leading-relaxed";
+        content.innerHTML = isBot ? formatBotMessageHtml(text) : `<p class="mb-0">${escapeHtml(text)}</p>`;
+
+        const time = document.createElement("div");
+        time.className = "mt-2 text-[11px] text-slate-400";
+        time.textContent = `Today at ${nowLabel()}`;
+
+        bubble.appendChild(meta);
+        bubble.appendChild(content);
+        bubble.appendChild(time);
+        wrapper.appendChild(bubble);
+        chatLog.appendChild(wrapper);
+        chatLog.scrollTop = chatLog.scrollHeight;
+      }
+
+      function botReply(userText) {
+        const t = userText.toLowerCase();
+        const match = qa.find((item) => item.keys.some((k) => t.includes(k)));
+        if (match) return match.answer;
+        return `I'm not fully sure yet — try one of these:\n\n- Ask your HR Transition Manager for this specific case\n- Ask about documents, offers, checklist, or dashboard\n- Ask about login, access, or Day‑1 readiness`;
+      }
+
+      // Seed initial message (replace static placeholder if present)
+      if (chatLog) {
+        chatLog.innerHTML = "";
+        addMsg({
+          from: "bot",
+          text:
+            "🤖 Hi! I'm RebadgeBot — your onboarding assistant.\n\nI can help with:\n\n- Document checklists and uploads\n- Offer questions and terms\n- Access requests\n- General questions about your rebadging journey\n\nWhat would you like to know?",
+        });
+      }
+
+      function addTyping() {
+        const wrapper = document.createElement("div");
+        wrapper.id = "chatTyping";
+        wrapper.className = "mb-3 flex justify-start";
+        wrapper.innerHTML = `
+          <div class="max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed border border-slate-600/40 bg-slate-800/70 shadow-sm text-slate-100">
+            <div class="mb-1 text-[11px] tracking-[0.18em] text-sky-400">${botName}</div>
+            <div class="typing" aria-label="Typing">
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+              <span class="typing-dot"></span>
+            </div>
+          </div>
+        `;
+        chatLog.appendChild(wrapper);
+        chatLog.scrollTop = chatLog.scrollHeight;
+      }
+      function removeTyping() {
+        document.getElementById("chatTyping")?.remove();
+      }
+
+      chatForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const text = (chatInput.value || "").trim();
+        if (!text) return;
+        addMsg({ from: "user", text });
+        chatInput.value = "";
+        const reply = botReply(text);
+        addTyping();
+        window.setTimeout(() => {
+          removeTyping();
+          addMsg({ from: "bot", text: reply });
+        }, 650);
+      });
+
+      // Support the inline onclick style you shared
+      window.sendChat = () => {
+        chatForm?.dispatchEvent(new Event("submit", { cancelable: true }));
+      };
+      window.sendSuggestion = (msg) => {
+        chatInput.value = msg;
+        chatInput.focus();
+        window.sendChat();
+      };
+
+      // ----- Viewer AI bot widget (floating) -----
+      const viewerFab = $("#viewerBotFab");
+      const viewerBackdrop = $("#viewerBotBackdrop");
+      const viewerClose = $("#viewerBotClose");
+      const viewerLog = $("#viewerBotLog");
+      const viewerForm = $("#viewerBotForm");
+      const viewerInput = $("#viewerBotInput");
+
+      function openViewerBot() {
+        viewerBackdrop.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        viewerInput?.focus();
+      }
+      function closeViewerBot() {
+        viewerBackdrop.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      function viewerAddMsg({ from, text }) {
+        const isBot = from === "bot";
+        const wrapper = document.createElement("div");
+        wrapper.className = "mb-3 flex " + (isBot ? "justify-start" : "justify-end");
+
+        const bubble = document.createElement("div");
+        bubble.className =
+          "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed border " +
+          (isBot
+            ? "bg-slate-800/70 border-slate-600/40 shadow-sm text-slate-100"
+            : "bg-indigo-500/15 border-slate-600/40 text-slate-100");
+
+        const meta = document.createElement("div");
+        meta.className = "mb-1 text-[11px] tracking-[0.18em] " + (isBot ? "text-sky-400" : "text-slate-400");
+        meta.textContent = isBot ? "Viewer Assistant" : "You";
+
+        const content = document.createElement("div");
+        content.className = isBot ? "bot-msg-content text-sm leading-relaxed space-y-2" : "text-sm leading-relaxed";
+        content.innerHTML = isBot ? formatBotMessageHtml(text) : `<p class="mb-0">${escapeHtml(text)}</p>`;
+
+        bubble.appendChild(meta);
+        bubble.appendChild(content);
+        wrapper.appendChild(bubble);
+        viewerLog.appendChild(wrapper);
+        viewerLog.scrollTop = viewerLog.scrollHeight;
+      }
+
+      function seedViewerBot() {
+        if (!viewerLog || viewerLog.childElementCount > 0) return;
+        viewerAddMsg({
+          from: "bot",
+          text:
+            "Hi — I’m the Viewer Assistant.\n\nAsk me about:\n\n- Documents and uploads\n- Offers and terms\n- Checklists and HR tracking\n- Day‑1 readiness",
+        });
+      }
+
+      viewerFab?.addEventListener("click", () => {
+        seedViewerBot();
+        openViewerBot();
+      });
+      viewerClose?.addEventListener("click", closeViewerBot);
+      viewerBackdrop?.addEventListener("click", (e) => {
+        if (e.target === viewerBackdrop) closeViewerBot();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && viewerBackdrop?.getAttribute("aria-hidden") === "false") closeViewerBot();
+      });
+
+      viewerForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const text = (viewerInput.value || "").trim();
+        if (!text) return;
+        viewerAddMsg({ from: "user", text });
+        viewerInput.value = "";
+        const reply = botReply(text);
+        window.setTimeout(() => viewerAddMsg({ from: "bot", text: reply }), 220);
+      });
+
+      document.querySelectorAll("[data-vsuggest]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const q = btn.textContent.trim();
+          viewerInput.value = q;
+          viewerForm?.dispatchEvent(new Event("submit", { cancelable: true }));
+        });
+      });
+
+      // ----- Tutorial content + interactions -----
+      const steps = [
+        {
+          id: 1,
+          title: "HR uploads 150 employees",
+          employee: "You’ll receive access once your profile is provisioned.",
+          hr: "Bulk upload employee dataset; validate fields; create portal access.",
+        },
+        {
+          id: 2,
+          title: "Employees receive login",
+          employee: "Sign in and confirm your profile details and timeline.",
+          hr: "Trigger login invites; track activation rates; handle access issues.",
+        },
+        {
+          id: 3,
+          title: "Guided onboarding journey",
+          employee: "Follow the step-by-step journey with a clear checklist.",
+          hr: "Ensure workflows are complete and role-based content is consistent.",
+        },
+        {
+          id: 4,
+          title: "Document & offer management",
+          employee: "Upload required documents and review/acknowledge the offer.",
+          hr: "Verify documents, manage offers, compare terms, resolve escalations.",
+        },
+        {
+          id: 5,
+          title: "HR monitoring & reminders",
+          employee: "Get reminders if anything is pending; finish remaining steps.",
+          hr: "Identify 30 pending employees; send reminders; spot delays early.",
+        },
+        {
+          id: 6,
+          title: "Day‑1 readiness dashboard",
+          employee: "Confirm readiness and see what’s next for Day‑1 onboarding.",
+          hr: "Monitor readiness %, completion rate, and risk flags before Day‑1.",
+        },
+      ];
+
+      let role = "employee";
+      const roleEmployeeBtn = $("#roleEmployee");
+      const roleHRBtn = $("#roleHR");
+      const tutorialTitle = $("#tutorialTitle");
+      const tutorialRolePill = $("#tutorialRolePill");
+      const timeline = $("#timeline");
+      const tutorialCards = $("#tutorialCards");
+
+      function setRole(nextRole) {
+        role = nextRole;
+
+        const isEmp = role === "employee";
+        roleEmployeeBtn.className =
+          "rounded-xl px-4 py-2 text-sm font-semibold transition " +
+          (isEmp ? "text-slate-100 bg-slate-800/50 hover:bg-slate-600/50" : "text-slate-300 hover:bg-slate-700/50");
+        roleHRBtn.className =
+          "rounded-xl px-4 py-2 text-sm font-semibold transition " +
+          (!isEmp ? "text-slate-100 bg-slate-800/50 hover:bg-slate-600/50" : "text-slate-300 hover:bg-slate-700/50");
+
+        tutorialTitle.textContent = isEmp ? "Employee Journey" : "HR Transition Journey";
+        tutorialRolePill.textContent = isEmp ? "Employee" : "HR";
+
+        renderTutorial();
+      }
+
+      function renderTutorial() {
+        timeline.innerHTML = "";
+        tutorialCards.innerHTML = "";
+
+        steps.forEach((s) => {
+          const t = document.createElement("div");
+          t.className = "tag rounded-2xl p-4 flex items-start gap-3";
+          t.innerHTML = `
+            <div class="mt-0.5 h-8 w-8 rounded-xl border border-slate-600/40 bg-slate-800/50 flex items-center justify-center text-xs font-bold text-slate-100">${s.id}</div>
+            <div>
+              <div class="text-sm font-semibold text-slate-100">${escapeHtml(s.title)}</div>
+              <div class="mt-1 text-xs text-slate-400">${escapeHtml(role === "employee" ? s.employee : s.hr)}</div>
+            </div>
+          `;
+          timeline.appendChild(t);
+
+          const card = document.createElement("div");
+          card.className = "tag rounded-3xl p-5 border border-slate-600/40 bg-slate-800/50 hover:bg-slate-700/50 transition";
+          card.innerHTML = `
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <div class="text-xs tracking-[0.24em] text-slate-400">STEP ${s.id}</div>
+                <div class="mt-2 text-base font-semibold text-slate-100">${escapeHtml(s.title)}</div>
+              </div>
+              <span class="text-xs text-slate-400">${role === "employee" ? "EMP" : "HR"}</span>
+            </div>
+            <div class="mt-3 text-sm text-slate-300">${escapeHtml(role === "employee" ? s.employee : s.hr)}</div>
+            <div class="mt-4 flex items-center justify-between gap-3">
+              <button data-demo="${s.id}" class="neon-btn rounded-xl px-4 py-2 text-xs font-semibold text-white transition">
+                See Demo
+              </button>
+              <button data-try="${s.id}" class="rounded-xl px-4 py-2 text-xs font-semibold text-slate-300 border border-slate-600/40 bg-slate-800/50 hover:bg-slate-700/50 transition">
+                Try Demo
+              </button>
+            </div>
+          `;
+          tutorialCards.appendChild(card);
+        });
+
+        tutorialCards.querySelectorAll("[data-demo]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const id = Number(btn.getAttribute("data-demo"));
+            const step = steps.find((x) => x.id === id);
+            openModal(step.title, role === "employee" ? step.employee : step.hr);
+          });
+        });
+        tutorialCards.querySelectorAll("[data-try]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const id = Number(btn.getAttribute("data-try"));
+            const step = steps.find((x) => x.id === id);
+            openModal(
+              `${step.title} – Try Demo`,
+              "Micro-interaction triggered. Imagine the portal updating your checklist, verifying documents, and refreshing readiness in real time."
+            );
+          });
+        });
+      }
+
+      roleEmployeeBtn?.addEventListener("click", () => setRole("employee"));
+      roleHRBtn?.addEventListener("click", () => setRole("hr"));
+      setRole("employee");
+
+      // ----- Contact form (JS-only validation) -----
+      const contactForm = $("#contactForm");
+      const contactStatus = $("#contactStatus");
+      contactForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = ($("#cName").value || "").trim();
+        const email = ($("#cEmail").value || "").trim();
+        const message = ($("#cMessage").value || "").trim();
+
+        const errors = [];
+        if (name.length < 2) errors.push("Name is too short.");
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("Email looks invalid.");
+        if (message.length < 10) errors.push("Message should be at least 10 characters.");
+
+        if (errors.length) {
+          contactStatus.textContent = errors.join(" ");
+          contactStatus.className = "text-xs text-red-400";
+          return;
+        }
+
+        contactStatus.textContent = "Message validated. (Demo only) — HR will respond via the portal.";
+        contactStatus.className = "text-xs text-emerald-400";
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
+
+age should be at least 10 characters.");
+
+        if (errors.length) {
+          contactStatus.textContent = errors.join(" ");
+          contactStatus.className = "text-xs text-red-400";
+          return;
+        }
+
+        contactStatus.textContent = "Message validated. (Demo only) — HR will respond via the portal.";
+        contactStatus.className = "text-xs text-emerald-400";
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
+
